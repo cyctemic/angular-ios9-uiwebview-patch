@@ -1,5 +1,5 @@
 /**
- * ==================  angular-ios9-uiwebview.patch.js v1.1.1 ==================
+ * ==================  angular-ios9-uiwebview.patch.js v1.2.0 ==================
  *
  * This patch works around iOS9 UIWebView regression that causes infinite digest
  * errors in Angular.
@@ -34,7 +34,8 @@
  * License: MIT
  */
 
-angular.module('ngIOS9UIWebViewPatch', ['ng']).config(['$provide', function($provide) {
+module.exports.name = 'ngIOS9UIWebViewPatch';
+angular.module(module.exports.name, ['ng']).config(['$provide', function($provide) {
   'use strict';
 
   $provide.decorator('$browser', ['$delegate', '$window', function($delegate, $window) {
